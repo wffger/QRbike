@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/E:/360yunsync/Wffger's%20Works/QRbike/SlidingMenu/build/exploded-aar/QRbike/actionbarsherlock/unspecified/res/values-w500dp/values.xml -->
+    <eat-comment />
+
+    <integer name="abs__max_action_buttons">4</integer>
+
+</resources>
