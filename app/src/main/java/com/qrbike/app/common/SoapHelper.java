@@ -4,6 +4,8 @@ package com.qrbike.app.common;
  * Created by Kingsun on 14-4-22.
  */
 
+import com.qrbike.app.R;
+
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
@@ -15,7 +17,7 @@ public class SoapHelper {
     // 调用的方法名称
     String methodName;
     // EndPoint
-    String endPoint = "http://10.0.2.2:8085/StudentService/Default.asmx";
+    String endPoint = "http://godship:8086/QrBikeWS/Default.asmx";
     // SOAP Action
     String soapAction;//= "http://tempuri.org/" + methodName;
     // 指定WebService的命名空间和调用的方法名
@@ -81,26 +83,22 @@ public class SoapHelper {
     public String getResultByIndex(int i)
     {
         SoapObject object=(SoapObject)envelope.bodyIn;
-        String result=object.getPropertyAsString(i);
+//        String result=object.getPropertyAsString(i);
 //        String result=object.getProperty(i).toString();
-//        String result=object.getPropertyAsString(0);
+        String result=object.getPropertyAsString(0);
         return result;
     }
 
     /*获取返回的结果*/
-    public String getResultByName(String s)
+    public String getResultByName(String name)
     {
         String result="";
         try
         {
             SoapObject object=(SoapObject)envelope.getResponse();   /*获得返回结果*/
-            result=object.getPropertyAsString(s);
-//            result=object.getProperty(s).toString();
+            result=object.getPropertyAsString(name);
         }
         catch (Exception e){e.printStackTrace();}
-//        String result=object.getProperty(s).toString();
-//        String result=object.getProperty('"'+s+'"').toString();
-//        String result=object.getPrimitivePropertyAsString(s);
         return result;
     }
 

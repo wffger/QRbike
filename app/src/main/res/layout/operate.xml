@@ -8,15 +8,15 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/stuId"
-        android:hint="student id"
+        android:id="@+id/recordPK"
+        android:hint="记录主键"
         android:layout_weight="0.07" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/method"
-        android:hint="method"
+        android:hint="调用方法"
         android:layout_weight="0.07"
         android:layout_gravity="center_horizontal" />
 
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/property"
-        android:hint="property"
+        android:hint="获取字段"
         android:layout_weight="0.07" />
 
     <LinearLayout
@@ -35,21 +35,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get Studnet Info"
-            android:id="@+id/query_btn"
-            android:singleLine="true"
-            android:layout_weight="0.05" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Query Stu Info"
-            android:id="@+id/qsi_btn"
+            android:text="执行"
+            android:id="@+id/btn_execute"
             android:layout_weight="0.05" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="291dp"
-        android:id="@+id/result_text" />
+        android:layout_height="290dp"
+        android:id="@+id/txt_result" />
 </LinearLayout>
