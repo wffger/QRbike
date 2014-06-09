@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -335,44 +336,20 @@ public final class Capture extends Activity implements SurfaceHolder.Callback {
 	
 	// 解析二维码
 	private void parseBarCode(String msg) {
-		// 手机震动
-		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		vibrator.vibrate(100);
-//		mProgress = ProgressDialog.show(Capture.this, null, "已扫描，正在处理···",true,true);
-		mProgress.setOnDismissListener(new DialogInterface.OnDismissListener() {
-			public void onDismiss(DialogInterface dialog) {
-				restartPreviewAfterDelay(1l);
-			}
-		});
-		
-		// 判断是否符合基本的json格式
-		if (!msg.matches("^\\{.*")) {
-			showDialog(msg);
-		} else {
-			try {
-				Barcode barcode = Barcode.parse(msg);
-				Log.i(TAG, barcode.toString());
-				int type = barcode.getType();
-				if (barcode.isRequireLogin()) {
-/*					if (!ac.isLogin()) {
-						UIHelper.showLoginDialog(Capture.this);
-						return;
-					}*/
-				}
-				switch (type) {
-				case Barcode.SIGN_IN:// 签到
-//					signin(barcode);
-					break;
-				default:
-					break;
-				}
-//			} catch (AppException e) {
-            } catch (Exception e) {
-//				UIHelper.ToastMessage(this, "json数据解析异常");
-				mProgress.dismiss();
-			}
-		}
-	}
+        // 手机震动
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(100);
+        mProgress = ProgressDialog.show(Capture.this, null, "已扫描，正在处理···", true, true);
+        mProgress.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            public void onDismiss(DialogInterface dialog) {
+                restartPreviewAfterDelay(1l);
+            }
+        });
+        String sfbh = msg.substring(msg.indexOf(",")+1, msg.indexOf(",")+11);
+        Intent intent = new Intent(Capture.this, Backup.class);
+        intent.putExtra("sfbh", sfbh);
+        startActivity(intent);
+    }
 	
 	/**
 	 * 启动签到界面
@@ -392,26 +369,33 @@ public final class Capture extends Activity implements SurfaceHolder.Callback {
 	 */
 	private void showDialog(final String msg) {
 		new AlertDialog.Builder(Capture.this).setTitle("扫描结果").
-		setMessage("非oschina提供活动签到二维码\n内容：" + msg).
+		setMessage("内容：" + msg).
 		setPositiveButton("复制", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				mProgress.dismiss();
-				dialog.dismiss();
-				//获取剪贴板管理服务
-				ClipboardManager cm =(ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-				//将文本数据复制到剪贴板
-				cm.setText(msg);
+            public void onClick(DialogInterface dialog, int which) {
+                mProgress.dismiss();
+                dialog.dismiss();
+                //获取剪贴板管理服务
+                ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                //将文本数据复制到剪贴板
+                cm.setText(msg);
+ /*               SharedPreferences.Editor share_write=getSharedPreferences("share_data",0).edit();
+                share_write.putInt("sfbh", Integer.parseInt(msg.substring(4,14)));
+                share_write.commit();
+                Intent intent = new Intent(Capture.this, Backup.class);
+                startActivity(intent);
+                mProgress.dismiss();
+                dialog.dismiss();*/
 //				UIHelper.ToastMessage(Capture.this, "复制成功");
-			}
-		}).setNegativeButton("返回", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				mProgress.dismiss();
-				dialog.dismiss();
-				if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
-					restartPreviewAfterDelay(0L);
-				}
-			}
-		}).show();
+            }
+        }).setNegativeButton("返回", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                mProgress.dismiss();
+                dialog.dismiss();
+                if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
+                    restartPreviewAfterDelay(0L);
+                }
+            }
+        }).show();
 	}
 
 	// 初始化照相机，CaptureActivityHandler解码

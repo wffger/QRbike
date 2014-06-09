@@ -59,12 +59,12 @@ public class Operate extends Activity  {
                 soapHelper.setProperty("id",id);
                 soapHelper.setSObject();
                 soapHelper.callWebService();
-                String result1 = soapHelper.getResultByIndex(0);
+//                String result1 = soapHelper.getResultByIndex(0);
                 String result2 = soapHelper.getResultByName(propertyName);
-                int result3 = soapHelper.getPropertyCount();
-                String result4=soapHelper.getObject().toString();
+//                int result3 = soapHelper.getPropertyCount();
+//                String result4=soapHelper.getObject().toString();
                 // 查询学生信息
-                resultView.setText(result1 + "\n" + result2);
+                resultView.setText("" + "\n" + result2);
             }
         });
     }

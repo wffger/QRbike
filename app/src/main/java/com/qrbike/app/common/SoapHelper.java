@@ -83,16 +83,16 @@ public class SoapHelper {
     public String getResultByIndex(int i)
     {
         SoapObject object=(SoapObject)envelope.bodyIn;
-//        String result=object.getPropertyAsString(i);
+        String result=object.getPropertyAsString(i);
 //        String result=object.getProperty(i).toString();
-        String result=object.getPropertyAsString(0);
+//        String result=object.getPropertyAsString(0);
         return result;
     }
 
     /*获取返回的结果*/
     public String getResultByName(String name)
     {
-        String result="";
+        String result="No result";
         try
         {
             SoapObject object=(SoapObject)envelope.getResponse();   /*获得返回结果*/

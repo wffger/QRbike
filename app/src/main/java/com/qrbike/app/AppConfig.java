@@ -11,8 +11,7 @@ import android.content.SharedPreferences;
  */
 public class AppConfig {
     private final static String APP_CONFIG= "config";
-
-    public final static String SOAP_ENDPOINT = "http://godship:8084/StudentService/default.asmx";
+    public final static String SOAP_ENDPOINT = "http://godship:8086/QrBikeWS/Default.asmx";
 
     private Context mContext;
     private static AppConfig appConfig;
