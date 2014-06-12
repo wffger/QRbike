@@ -22,10 +22,10 @@
         <activity
             android:name="com.qrbike.app.ui.Main"
             android:label="@string/title_activity_main" >
-            <intent-filter>
+<!--            <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".ui.Operate"
@@ -50,6 +50,14 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.qrbike.app.ui.BackupList"
+            android:label="@string/backup_list" >
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
         </activity>
     </application>
 

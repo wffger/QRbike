@@ -16,4 +16,6 @@
 
     <string name="endPoint">http://godship:8084/StudentService/default.asmx</string>
 
+    <string name="backup_list">备份文件列表</string>
+
 </resources>

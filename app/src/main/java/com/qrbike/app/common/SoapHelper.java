@@ -84,8 +84,6 @@ public class SoapHelper {
     {
         SoapObject object=(SoapObject)envelope.bodyIn;
         String result=object.getPropertyAsString(i);
-//        String result=object.getProperty(i).toString();
-//        String result=object.getPropertyAsString(0);
         return result;
     }
 
