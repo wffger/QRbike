@@ -8,11 +8,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.preference.PreferenceManager;
 
 import com.qrbike.app.R;
 import com.qrbike.app.AppContext;
-import com.qrbike.app.common.Save2File;
+import com.qrbike.app.common.FileHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,15 +36,18 @@ public class Backup extends Activity{
         etjldz = (EditText) findViewById(R.id.ET_jldz);
         etwgnr = (EditText) findViewById(R.id.ET_wgnr);
 
+        /*获取历史记录人，记录地址，违规内容*/
         SharedPreferences share_read=getSharedPreferences("share_data",0);
         String sd_tmp = share_read.getString("jlr",null);
         if (!sd_tmp.isEmpty()) etjlr.setText(sd_tmp);
         sd_tmp = share_read.getString("jldz",null);
         if(!sd_tmp.isEmpty()) etjldz.setText(sd_tmp);
         sd_tmp = share_read.getString("wgnr",null);
-        if(!sd_tmp.isEmpty()) etwgnr.setText(sd_tmp);/*
+        if(!sd_tmp.isEmpty()) etwgnr.setText(sd_tmp);
+        /*
         int sd_int = share_read.getInt("sfbh", 0);
         if(sd_int != 0 ) etsfbh.setText(sd_int);*/
+        /*获取传递过来的身份编号*/
         Intent intent = getIntent();
         etsfbh.setText(intent.getStringExtra("sfbh"));
     }
@@ -72,13 +74,14 @@ public class Backup extends Activity{
             String jlr = etjlr.getText().toString();
             String jldz = etjldz.getText().toString();
             String wgnr = etwgnr.getText().toString();
+            /*保存新的记录人，记录地址，违规内容*/
             SharedPreferences.Editor share_write=getSharedPreferences("share_data",0).edit();
             share_write.putString("jlr",jlr);
             share_write.putString("jldz",jldz);
             share_write.putString("wgnr",wgnr);
             share_write.commit();
 
-            Save2File service = new Save2File();
+            FileHelper service = new FileHelper();
             boolean SDCardExit = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
             if (!SDCardExit)  {
                 Toast.makeText(getApplicationContext(),"没有SD卡",Toast.LENGTH_SHORT).show();

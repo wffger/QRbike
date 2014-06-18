@@ -12,8 +12,35 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Capture"
+        android:text="点击扫码"
         android:id="@+id/btn_Capture"
         android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="备份列表"
+        android:id="@+id/btn_BackupList"
+        android:layout_below="@+id/btn_Capture"
+        android:layout_alignLeft="@+id/btn_Capture"
+        android:layout_alignStart="@+id/btn_Capture"
+        android:layout_marginTop="49dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="编辑记录"
+        android:id="@+id/btn_Backup"
+        android:layout_below="@+id/btn_Capture"
+        android:layout_alignLeft="@+id/btn_BackupList"
+        android:layout_alignStart="@+id/btn_BackupList" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看信息"
+        android:id="@+id/btn_Operate"
+        android:layout_below="@+id/btn_BackupList"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

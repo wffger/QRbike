@@ -18,12 +18,35 @@ public class Main extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn=(Button)findViewById(R.id.btn_Capture);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button btn1=(Button)findViewById(R.id.btn_Capture);
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(Main.this,"Hi, wffger!", Toast.LENGTH_LONG).show();
                 UIHelper.showCapture(Main.this);
+            }
+        });
+
+        Button btn2=(Button)findViewById(R.id.btn_Backup);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UIHelper.showBackup(Main.this);
+            }
+        });
+
+        Button btn3=(Button)findViewById(R.id.btn_BackupList);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UIHelper.showBackupList(Main.this);
+            }
+        });
+
+        Button btn4=(Button)findViewById(R.id.btn_Operate);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UIHelper.showOperate(Main.this);
             }
         });
     }

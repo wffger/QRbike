@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.qrbike.app.R;
+import com.qrbike.app.common.FileHelper;
 import com.qrbike.app.common.SoapHelper;
 
 /**
@@ -63,7 +64,7 @@ public class Operate extends Activity  {
                 String result2 = soapHelper.getResultByName(propertyName);
                 String result4=soapHelper.getObject().toString();
                 // 查询学生信息
-                resultView.setText(result1 + "\n" + result2+ "\n" + result4);
+                resultView.setText(result1 + "\n" + result2+ "\n" + result4 );
             }
         });
     }

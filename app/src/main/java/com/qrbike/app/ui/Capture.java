@@ -345,23 +345,14 @@ public final class Capture extends Activity implements SurfaceHolder.Callback {
                 restartPreviewAfterDelay(1l);
             }
         });
-        String sfbh = msg.substring(msg.indexOf(",")+1, msg.indexOf(",")+11);
+
+        /*截取二维码中的身份编号，并传递给新的Backup活动*/
+        String sfbh = msg.substring(msg.indexOf(",")+1, msg.indexOf(",")+12);
         Intent intent = new Intent(Capture.this, Backup.class);
         intent.putExtra("sfbh", sfbh);
         startActivity(intent);
     }
-	
-	/**
-	 * 启动签到界面
-	 * @param barcode
-	 */
-/*	private void signin(Barcode barcode) {
-		Intent intent = new Intent(Capture.this, Signin.class);
-		Bundle bundle = new Bundle();
-		bundle.putSerializable("barcode", barcode);
-		intent.putExtras(bundle);
-		startActivity(intent);
-	}*/
+
 	
 	/**
 	 * 扫描结果对话框

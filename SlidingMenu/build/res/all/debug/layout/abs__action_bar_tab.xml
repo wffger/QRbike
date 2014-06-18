@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<view
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    class="com.actionbarsherlock.internal.widget.ScrollingTabContainerView$TabView"
-    style="?attr/actionBarTabStyle"
-/><!-- From: file:/E:/360yunsync/Wffger's%20Works/QRbike/actionbarsherlock/res/layout/abs__action_bar_tab.xml --><!-- From: file:/E:/360yunsync/Wffger's%20Works/QRbike/SlidingMenu/build/exploded-aar/QRbike/actionbarsherlock/unspecified/res/layout/abs__action_bar_tab.xml -->

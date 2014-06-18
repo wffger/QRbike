@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="E:\360yunsync\Wffger&apos;s Works\QRbike\app\build\intermediates\pre-dexed\debug\ksoap2-android-assembly-3.2.0-jar-with-dependencies-a226e30cdaa1fdc40ac34f9b7653cac44c16db9c.jar"
+        jar="E:\360yunsync\Wffger&apos;s Works\QRbike\app\libs\ksoap2-android-assembly-3.2.0-jar-with-dependencies.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="28d8f13fdec2fe5de24af98b7131c858c266bbea"/>
+    <item
+        dex="E:\360yunsync\Wffger&apos;s Works\QRbike\app\build\intermediates\pre-dexed\debug\zxing-bec7d5ab8b1816036880b476cd35224e4ae8115b.jar"
+        jar="E:\360yunsync\Wffger&apos;s Works\QRbike\app\libs\zxing.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="69ab751723c7f7c8a01fddb1d169a93160fadca7"/>
+    <item
+        dex="E:\360yunsync\Wffger&apos;s Works\QRbike\app\build\intermediates\pre-dexed\debug\classes-1d959899c7904400f07866cb2fc2b93e68a508ee.jar"
+        jar="E:\360yunsync\Wffger&apos;s Works\QRbike\build\intermediates\exploded-aar\QRbike\actionbarsherlock\unspecified\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="2f43191f053170de40769b3f45f76664e64f3b04"/>
+    <item
+        dex="E:\360yunsync\Wffger&apos;s Works\QRbike\app\build\intermediates\pre-dexed\debug\android-support-v4-0af561f265e9a3ebda9fd00d45c2b891e278d49b.jar"
+        jar="E:\360yunsync\Wffger&apos;s Works\QRbike\build\intermediates\exploded-aar\QRbike\actionbarsherlock\unspecified\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="48c94ae70fa65718b382098237806a5909bb096e"/>
+    <item
+        dex="E:\360yunsync\Wffger&apos;s Works\QRbike\app\build\intermediates\pre-dexed\debug\classes-939efcba087cb4f92a4907d90b8476b13db6a45a.jar"
+        jar="E:\360yunsync\Wffger&apos;s Works\QRbike\build\intermediates\exploded-aar\QRbike\SlidingMenu\unspecified\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="26b4a0966ae45dc5d9749506e265891de20fc7b1"/>
+
+</pre-dex-items>

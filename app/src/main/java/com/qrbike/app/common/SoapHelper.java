@@ -61,7 +61,7 @@ public class SoapHelper {
     /*调用WebService*/
     public void callWebService()
     {
-        HttpTransportSE transport= new HttpTransportSE(endPoint);
+        HttpTransportSE transport= new HttpTransportSE(endPoint, 5000);
         try
         {
             //调用
